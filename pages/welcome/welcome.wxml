@@ -1,0 +1,7 @@
+<view class="container">
+    <image class="user-avatar" src="/images/avatar.jpg"></image>
+    <text class="user-name">Hello, <text style="color:#444;">OYSK</text></text>
+    <view class="moto-container" bindtap="jumpTap">
+        <text class="moto">开启猿分享</text>
+    </view>
+</view>

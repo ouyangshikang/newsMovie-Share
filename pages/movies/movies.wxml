@@ -1,0 +1,24 @@
+<import src="movie-list/movie-list-template.wxml" />
+<import src="movie-grid/movie-grid-template.wxml" />
+
+<view class="search">
+  <icon type="search" size="15" color="#405f80" class="search-img"/>
+  <input type="text" placeholder="摔跤吧,爸爸" placeholder-class="placeholder" bindfocus="bindFocus" bindblur="bindBlur" bindconfirm="bindConfirm"/>
+  <image src="/images/icon/xx.png" class="xx-img" wx:if="{{xxImageShow}}" bindtap="cancelTap"></image>
+</view>
+
+<view class="container" wx:if="{{containerShow}}" >
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...inTheater}}"></template>
+  </view>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...comingSoon}}"></template>
+  </view>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...top250}}"></template>
+  </view>
+</view>
+
+<view class="search-panel" wx:if="{{searchPannelShow}}">
+    <template is="movieGridTemplate" data="{{...searchResult}}"></template>
+</view>

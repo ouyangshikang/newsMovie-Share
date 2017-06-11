@@ -1,0 +1,37 @@
+<import src="/pages/posts/post-item/post-template.wxml" />
+<view>
+  <swiper indicator-dots="true" autoplay="ture" interval="3000" duration="1000">
+    <swiper-item>
+      <image src="/images/iqiyi.png"  data-postId="6" catchtap="postTap"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/vr.png"  data-postId="7" catchtap="postTap"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/wx.png"  data-postId="8" catchtap="postTap"></image>
+    </swiper-item>
+  </swiper>
+
+  <block wx:for="{{post_key}}" wx:for-item="item">
+    <view  catchtap="postTap" data-postId="{{item.postId}}">
+      <template is="newsItem" data="{{...item}}" />
+    </view>
+
+    <!--<view class="news-container">
+      <view class="user-info">
+        <image wx:if="{{item.condition}}" class="user-avatar" src="{{item.img.avatarSrc}}"></image>
+        <text class="news-date">{{item.date}}</text>
+      </view>
+      <text class="news-title">{{item.news_title}}</text>
+      <image class="news-pic" src="{{item.img.picSrc}}"></image>
+      <text class="news-content">{{item.news_content}}</text>
+      <view class="news-like">
+        <image class="news-like-image" src="/images/icon/chat1.png"></image>
+        <text class="news-count">{{item.commentNum}}</text>
+        <image class="news-like-image" src="/images/icon/view.png"></image>
+        <text class="news-count">{{item.readingNum}}</text>
+      </view>
+    </view>-->
+  </block>
+
+</view>

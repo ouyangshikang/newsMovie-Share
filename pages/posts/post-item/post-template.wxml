@@ -1,0 +1,17 @@
+<template name="newsItem">
+  <view class="news-container">
+    <view class="user-info">
+      <image wx:if="{{condition}}" class="user-avatar" src="{{img.avatarSrc}}"></image>
+      <text class="news-date">{{date}}</text>
+    </view>
+    <text class="news-title">{{news_title}}</text>
+    <image class="news-pic" src="{{img.picSrc}}" mode="aspectFill"></image>
+    <text class="news-content">{{news_content}}</text>
+    <view class="news-like">
+      <image class="news-like-image" src="/images/icon/chat1.png"></image>
+      <text class="news-count">{{commentNum}}</text>
+      <image class="news-like-image" src="/images/icon/view.png"></image>
+      <text class="news-count">{{readingNum}}</text>
+    </view>
+  </view>
+</template>
